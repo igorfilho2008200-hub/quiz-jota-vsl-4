@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { WelcomeScreen } from './welcome-screen';
 import { QuestionCard } from './question-card';
 import { LoadingScreen } from './loading-screen';
@@ -15,7 +15,11 @@ export function QuizManager() {
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [finalProfile, setFinalProfile] = useState<ProfileType | null>(null);
 
-  const startQuiz = () => setState('questions');
+  const startQuiz = () => {
+    setCurrentQuestionIndex(0);
+    setAnswers([]);
+    setState('questions');
+  };
 
   const handleAnswer = (answer: Answer) => {
     const newAnswers = [...answers, answer];
@@ -32,16 +36,16 @@ export function QuizManager() {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
       setAnswers(answers.slice(0, -1));
+    } else {
+      setState('welcome');
+      setAnswers([]);
     }
   };
 
   const calculateResult = (allAnswers: Answer[]) => {
     setState('loading');
 
-    // Logic: 
-    // 1. Point +1 for each profile selected in first 5 questions.
-    // 2. Tie-breaker using Question 5 (id 5, index 4).
-    
+    // Lógica de perfil baseada nas primeiras 5 perguntas
     const firstFive = allAnswers.slice(0, 5);
     const scores: Record<ProfileType, number> = {
       Explorador: 0,
@@ -70,14 +74,14 @@ export function QuizManager() {
     if (candidates.length === 1) {
       winner = candidates[0];
     } else {
-      // Tie-breaker: Use the answer of the 5th question (index 4)
+      // Desempate: Usa o perfil da 5ª pergunta (índice 4)
       const tieBreakerProfile = allAnswers[4].profile;
       winner = candidates.includes(tieBreakerProfile) ? tieBreakerProfile : candidates[0];
     }
 
     setFinalProfile(winner);
 
-    // Simulate 2s loading
+    // Simula tempo de processamento
     setTimeout(() => {
       setState('results');
     }, 2500);

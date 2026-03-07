@@ -1,4 +1,3 @@
-
 "use client"
 
 import React, { useState } from 'react';
@@ -21,7 +20,6 @@ export function QuestionCard({ question, current, total, onAnswer, onBack }: Que
 
   const handleSelect = (index: number) => {
     setSelected(index);
-    // Short delay for visual feedback before moving to next
     setTimeout(() => {
       onAnswer(question.options[index]);
       setSelected(null);
@@ -32,17 +30,13 @@ export function QuestionCard({ question, current, total, onAnswer, onBack }: Que
     <div className="w-full space-y-8 fade-in">
       <div className="space-y-4">
         <div className="flex justify-between items-center h-8">
-          {current > 1 ? (
-            <button 
-              onClick={onBack}
-              className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent/60 hover:text-primary transition-all group"
-            >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Pergunta Anterior
-            </button>
-          ) : (
-            <div /> // Espaçador para manter a porcentagem à direita
-          )}
+          <button 
+            onClick={onBack}
+            className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-accent/60 hover:text-primary transition-all group"
+          >
+            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            {current > 1 ? "Pergunta Anterior" : "Voltar ao Início"}
+          </button>
           <div className="flex items-center">
             <span className="text-sm font-bold text-accent tracking-widest">{Math.round(progress)}%</span>
           </div>
