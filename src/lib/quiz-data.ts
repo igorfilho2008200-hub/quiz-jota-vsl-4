@@ -20,92 +20,92 @@ export interface ProfileInfo {
 export const QUIZ_QUESTIONS: Question[] = [
   {
     id: 1,
-    text: "Ao se deparar com uma encruzilhada desconhecida em sua jornada, qual é o seu primeiro impulso?",
+    text: "Quando você precisa tomar uma decisão importante, o que mais pesa primeiro na sua cabeça?",
     options: [
-      { text: "Escolher o caminho que parece mais novo e inexplorado.", profile: "Explorador" },
-      { text: "Consultar os mapas e garantir que o caminho escolhido seja seguro.", profile: "Protetor" },
-      { text: "Tentar visualizar onde cada caminho pode terminar antes de decidir.", profile: "Visionário" },
-      { text: "Analisar qual caminho oferece a melhor eficiência de tempo e esforço.", profile: "Estrategista" },
+      { text: "Perceber que possibilidades interessantes essa decisão pode abrir.", profile: "Explorador" },
+      { text: "Garantir que essa decisão não coloque minha estabilidade em risco.", profile: "Protetor" },
+      { text: "Sentir se essa decisão realmente faz sentido para a vida que quero construir.", profile: "Visionário" },
+      { text: "Entender qual caminho faz mais sentido estruturalmente.", profile: "Estrategista" },
     ]
   },
   {
     id: 2,
-    text: "Em um momento de conflito entre razão e intuição, você tende a:",
+    text: "Se uma pessoa muito próxima de você tivesse que te definir em uma frase, qual delas provavelmente diria?",
     options: [
-      { text: "Seguir a intuição, mesmo sem saber exatamente o porquê.", profile: "Explorador" },
-      { text: "Priorizar a razão para evitar danos desnecessários.", profile: "Protetor" },
-      { text: "Equilibrar ambos visando um propósito maior no futuro.", profile: "Visionário" },
-      { text: "Utilizar a lógica para estruturar o que a intuição sugere.", profile: "Estrategista" },
+      { text: "“Ele sempre acaba encontrando um jeito diferente de fazer as coisas.”", profile: "Explorador" },
+      { text: "“Se tem alguém que sempre segura as pontas quando precisa, é ele.”", profile: "Protetor" },
+      { text: "“Ele dificilmente faz algo sem antes pensar bem no que está fazendo.”", profile: "Estrategista" },
+      { text: "“Ele vive tentando descobrir o que realmente quer fazer da vida.”", profile: "Visionário" },
     ]
   },
   {
     id: 3,
-    text: "Como você define o sucesso de uma decisão importante?",
+    text: "Quando você olha para as escolhas que fez na vida até hoje, elas tendem a seguir mais qual lógica?",
     options: [
-      { text: "Pela riqueza da experiência e pelo aprendizado gerado.", profile: "Explorador" },
-      { text: "Pela estabilidade e segurança mantidas após a escolha.", profile: "Protetor" },
-      { text: "Pelo impacto transformador que ela gera a longo prazo.", profile: "Visionário" },
-      { text: "Pela clareza dos resultados e o cumprimento das metas.", profile: "Estrategista" },
+      { text: "Buscar algo que tivesse mais significado ou propósito.", profile: "Visionário" },
+      { text: "Construir algo consistente e bem planejado.", profile: "Estrategista" },
+      { text: "Aproveitar oportunidades e experiências que apareceram.", profile: "Explorador" },
+      { text: "Manter estabilidade e segurança ao longo do tempo.", profile: "Protetor" },
     ]
   },
   {
     id: 4,
-    text: "O que mais te motiva a agir no seu dia a dia?",
+    text: "Se sua vida fosse um filme, qual desses títulos pareceria mais próximo da sua história?",
     options: [
-      { text: "A curiosidade pelo desconhecido e novas possibilidades.", profile: "Explorador" },
-      { text: "A preservação do que é valioso e a paz de espírito.", profile: "Protetor" },
-      { text: "A materialização de ideais e sonhos inspiradores.", profile: "Visionário" },
-      { text: "A otimização de sistemas e a conquista de eficiência.", profile: "Estrategista" },
+      { text: "Entre caminhos inesperados.", profile: "Explorador" },
+      { text: "Arquitetando o futuro.", profile: "Estrategista" },
+      { text: "Uma história ainda sendo escrita.", profile: "Visionário" },
+      { text: "Mantendo tudo de pé.", profile: "Protetor" },
     ]
   },
   {
     id: 5,
-    text: "Qual destas palavras melhor descreve sua atitude perante a vida?",
+    text: "Imagine que aparece uma nova oportunidade na sua vida. O que você analisa primeiro?",
     options: [
-      { text: "Liberdade", profile: "Explorador" },
-      { text: "Cuidado", profile: "Protetor" },
-      { text: "Horizonte", profile: "Visionário" },
-      { text: "Direção", profile: "Estrategista" },
+      { text: "Se aquilo está alinhado com a direção que você quer construir.", profile: "Visionário" },
+      { text: "Se existe um caminho claro e estruturado para aquilo funcionar.", profile: "Estrategista" },
+      { text: "Se aquilo pode comprometer sua segurança ou estabilidade atual.", profile: "Protetor" },
+      { text: "Se aquilo pode abrir novas experiências ou caminhos interessantes.", profile: "Explorador" },
     ]
   },
   {
     id: 6,
-    text: "Como você lida com a pressão de prazos imediatos?",
+    text: "Você encontra uma caixa misteriosa na sua porta com um bilhete dizendo: “isso pode mudar sua vida”. O que você faz primeiro?",
     options: [
-      { text: "Mantenho-me flexível e adaptável às mudanças de última hora.", profile: "Explorador" },
-      { text: "Busco garantir que nada essencial seja negligenciado sob pressão.", profile: "Protetor" },
-      { text: "Lembro-me do objetivo final para não perder a perspectiva.", profile: "Visionário" },
-      { text: "Organizo cada passo metodicamente para cumprir o tempo.", profile: "Estrategista" },
+      { text: "Analiso a caixa com cuidado para entender exatamente o que tem ali.", profile: "Estrategista" },
+      { text: "Desconfio e tento descobrir se aquilo pode dar algum problema.", profile: "Protetor" },
+      { text: "Abro na hora só para ver o que tem dentro.", profile: "Explorador" },
+      { text: "Fico curioso sobre por que aquilo apareceu para mim.", profile: "Visionário" },
     ]
   },
   {
     id: 7,
-    text: "Sua maior preocupação ao tomar uma decisão coletiva é:",
+    text: "Qual dessas perguntas te deixa mais curioso ou intrigado?",
     options: [
-      { text: "Garantir que todos tenham espaço para novas ideias.", profile: "Explorador" },
-      { text: "Proteger o bem-estar e a integridade de todos os envolvidos.", profile: "Protetor" },
-      { text: "Inspirar o grupo a ver além das dificuldades presentes.", profile: "Visionário" },
-      { text: "Estruturar o processo para que seja o mais justo e eficaz possível.", profile: "Estrategista" },
+      { text: "“Como algumas pessoas conseguem transformar uma ideia em algo gigantesco?”", profile: "Estrategista" },
+      { text: "“Por que algumas pessoas parecem atravessar qualquer crise sem desmoronar?”", profile: "Protetor" },
+      { text: "“E se existir um caminho totalmente diferente que ninguém percebeu ainda?”", profile: "Explorador" },
+      { text: "“Será que existe uma forma de viver que a maioria das pessoas nunca descobre?”", profile: "Visionário" },
     ]
   },
   {
     id: 8,
-    text: "Em um ambiente caótico, você geralmente é quem:",
+    text: "Qual dessas imagens mais chama sua atenção ou te prende por alguns segundos?",
     options: [
-      { text: "Encontra oportunidades onde outros veem apenas problemas.", profile: "Explorador" },
-      { text: "Cria um porto seguro para restaurar a ordem e a calma.", profile: "Protetor" },
-      { text: "Aponte a direção que devemos seguir após a tempestade.", profile: "Visionário" },
-      { text: "Analisa a situação e propõe um plano de ação imediato.", profile: "Estrategista" },
+      { text: "Uma mesa cheia de anotações e um grande plano sendo desenhado.", profile: "Estrategista" },
+      { text: "Uma casa iluminada resistindo firme no meio de uma grande tempestade.", profile: "Protetor" },
+      { text: "Uma estrada que se divide em vários caminhos diferentes.", profile: "Explorador" },
+      { text: "Uma pessoa parada no topo de uma montanha olhando o horizonte.", profile: "Visionário" },
     ]
   },
   {
     id: 9,
-    text: "Ao finalizar um projeto, seu pensamento final costuma ser:",
+    text: "Você descobre um mapa antigo com quatro caminhos possíveis. Qual deles te chama mais atenção?",
     options: [
-      { text: "Qual será a próxima grande descoberta?", profile: "Explorador" },
-      { text: "Tudo foi concluído com segurança e respeito.", profile: "Protetor" },
-      { text: "O quanto evoluímos em direção à nossa visão.", profile: "Visionário" },
-      { text: "Como podemos fazer isso melhor na próxima vez?", profile: "Estrategista" },
+      { text: "O caminho marcado com a frase: “aqui tudo começa a fazer sentido”", profile: "Visionário" },
+      { text: "O caminho descrito como: “o lugar onde poucos se perdem”", profile: "Protetor" },
+      { text: "O caminho anotado com: “ninguém sabe exatamente o que existe no final”", profile: "Explorador" },
+      { text: "O caminho que aponta para algo descrito como: “vale a pena chegar”", profile: "Estrategista" },
     ]
   }
 ];
