@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Question, Answer } from '@/lib/quiz-data';
 import { cn } from '@/lib/utils';
@@ -44,9 +43,6 @@ export function QuestionCard({ question, current, total, onAnswer, onBack }: Que
             <div /> // Spacer
           )}
           <div className="flex flex-col items-end">
-            <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
-              Questão {current} de {total}
-            </span>
             <span className="text-sm font-bold text-accent">{Math.round(progress)}%</span>
           </div>
         </div>
