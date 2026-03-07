@@ -5,15 +5,17 @@ import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { Question, Answer } from '@/lib/quiz-data';
 import { cn } from '@/lib/utils';
+import { ArrowLeft } from 'lucide-react';
 
 interface QuestionCardProps {
   question: Question;
   current: number;
   total: number;
   onAnswer: (answer: Answer) => void;
+  onBack: () => void;
 }
 
-export function QuestionCard({ question, current, total, onAnswer }: QuestionCardProps) {
+export function QuestionCard({ question, current, total, onAnswer, onBack }: QuestionCardProps) {
   const [selected, setSelected] = useState<number | null>(null);
   const progress = (current / total) * 100;
 
@@ -28,10 +30,25 @@ export function QuestionCard({ question, current, total, onAnswer }: QuestionCar
 
   return (
     <div className="w-full space-y-8 fade-in">
-      <div className="space-y-2">
-        <div className="flex justify-between items-end text-sm text-muted-foreground font-medium uppercase tracking-wider">
-          <span>Questão {current} de {total}</span>
-          <span>{Math.round(progress)}%</span>
+      <div className="space-y-4">
+        <div className="flex justify-between items-center">
+          {current > 1 ? (
+            <button 
+              onClick={onBack}
+              className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-muted-foreground hover:text-primary transition-colors group"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+              Voltar
+            </button>
+          ) : (
+            <div /> // Spacer
+          )}
+          <div className="flex flex-col items-end">
+            <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+              Questão {current} de {total}
+            </span>
+            <span className="text-sm font-bold text-accent">{Math.round(progress)}%</span>
+          </div>
         </div>
         <Progress value={progress} className="h-1.5 bg-muted [&>div]:bg-primary" />
       </div>

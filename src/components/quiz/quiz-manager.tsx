@@ -28,6 +28,13 @@ export function QuizManager() {
     }
   };
 
+  const handleBack = () => {
+    if (currentQuestionIndex > 0) {
+      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      setAnswers(answers.slice(0, -1));
+    }
+  };
+
   const calculateResult = (allAnswers: Answer[]) => {
     setState('loading');
 
@@ -92,6 +99,7 @@ export function QuizManager() {
           current={currentQuestionIndex + 1}
           total={QUIZ_QUESTIONS.length}
           onAnswer={handleAnswer}
+          onBack={handleBack}
         />
       )}
       {state === 'loading' && <LoadingScreen />}
