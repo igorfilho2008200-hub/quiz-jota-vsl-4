@@ -1,10 +1,12 @@
+
 "use client"
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PROFILES, ProfileType } from '@/lib/quiz-data';
-import { Compass, Shield, Eye, Target, Share2, RotateCcw, Lightbulb, AlertTriangle, CheckCircle2, MessageSquare } from 'lucide-react';
+import { Compass, Shield, Eye, Target, Share2, RotateCcw, Lightbulb, AlertTriangle, CheckCircle2, MessageSquare, PlayCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import Link from 'next/link';
 
 interface ResultScreenProps {
   profile: ProfileType;
@@ -23,7 +25,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
   const Icon = profileIcons[profile];
 
   return (
-    <div className="w-full space-y-12 fade-in py-8">
+    <div className="w-full space-y-12 fade-in py-8 max-w-2xl mx-auto">
       <div className="text-center space-y-4">
         <p className="text-sm font-medium uppercase tracking-[0.3em] text-primary">Operador Dominante Identificado</p>
         <h2 className="text-4xl md:text-5xl font-headline font-bold text-accent">
@@ -88,21 +90,58 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
             </p>
           </div>
         </div>
+
+        {/* Transition Section */}
+        <div className="bg-accent text-white p-10 md:p-14 rounded-[3rem] shadow-2xl space-y-8 mt-12 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
+          
+          <div className="space-y-6 relative z-10">
+            <h3 className="text-2xl md:text-3xl font-headline font-bold">
+              Existe algo importante sobre isso
+            </h3>
+            
+            <div className="space-y-4 text-lg font-body text-white/90 leading-relaxed">
+              <p>A maioria das pessoas acredita que toma decisões de forma totalmente consciente.</p>
+              <p>Mas na prática, grande parte das nossas escolhas acontece no automático.</p>
+              <p>São padrões invisíveis que acabam capturando o nosso centro decisor e influenciando o caminho que seguimos na vida.</p>
+              <p>Por isso muitas vezes sentimos que estamos sempre ocupados, sempre avançando… mas sem realmente nos aproximar da vida que imaginamos para nós.</p>
+              <p>Quando você entende como esses padrões funcionam, algo muda.</p>
+              <p>Você começa a perceber por que certas decisões te aproximam da vida que você quer… e outras acabam te afastando completamente.</p>
+              <p>No vídeo a seguir, o Jota explica três elementos que permitem sair da vida automática e assumir o domínio real das próprias decisões.</p>
+            </div>
+
+            <div className="pt-8 flex flex-col items-center gap-4">
+              <p className="text-sm text-white/60 font-body italic text-center">
+                "Seu resultado foi calculado com base nas respostas iniciais do teste."
+              </p>
+              <Button 
+                asChild
+                className="bg-primary hover:bg-[#5A3FFF] text-white rounded-full px-12 py-8 h-auto text-xl font-bold shadow-xl transition-all hover:scale-105 active:scale-95 group w-full sm:w-auto"
+              >
+                <Link href="/video" className="flex items-center gap-3">
+                  Ver a análise completa
+                  <PlayCircle className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+      <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
         <Button 
           onClick={onRestart}
           variant="outline"
-          className="border-primary text-primary hover:bg-primary hover:text-white rounded-full px-10 py-7 h-auto text-lg flex items-center gap-3 group transition-all"
+          className="border-primary/30 text-primary/60 hover:bg-primary/5 hover:text-primary rounded-full px-8 py-4 h-auto text-sm flex items-center gap-2 group transition-all"
         >
-          <RotateCcw className="w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
+          <RotateCcw className="w-4 h-4 group-hover:rotate-180 transition-transform duration-500" />
           Refazer Reflexão
         </Button>
         <Button 
-          className="bg-primary hover:bg-primary/90 text-white rounded-full px-10 py-7 h-auto text-lg flex items-center gap-3 shadow-md hover:shadow-lg transition-all"
+          variant="ghost"
+          className="text-muted-foreground hover:text-primary rounded-full px-8 py-4 h-auto text-sm flex items-center gap-2 transition-all"
         >
-          <Share2 className="w-5 h-5" />
+          <Share2 className="w-4 h-4" />
           Compartilhar Perfil
         </Button>
       </div>
