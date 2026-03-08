@@ -26,10 +26,10 @@ export const QUIZ_QUESTIONS: Question[] = [
     id: 1,
     text: "Quando você precisa tomar uma decisão importante, o que mais pesa primeiro na sua cabeça?",
     options: [
-      { text: "perceber que possibilidades interessantes essa decisão pode abrir", profile: "Explorador" },
-      { text: "garantir que essa decisão não coloque minha estabilidade em risco", profile: "Protetor" },
-      { text: "sentir se essa decisão realmente faz sentido para a vida que quero construir", profile: "Visionário" },
-      { text: "entender qual caminho faz mais sentido estruturalmente", profile: "Estrategista" },
+      { text: "Perceber que possibilidades interessantes essa decisão pode abrir", profile: "Explorador" },
+      { text: "Garantir que essa decisão não coloque minha estabilidade em risco", profile: "Protetor" },
+      { text: "Sentir se essa decisão realmente faz sentido para a vida que quero construir", profile: "Visionário" },
+      { text: "Entender qual caminho faz mais sentido estruturalmente", profile: "Estrategista" },
     ]
   },
   {
@@ -46,10 +46,10 @@ export const QUIZ_QUESTIONS: Question[] = [
     id: 3,
     text: "Quando você olha para as escolhas que fez na vida até hoje, elas tendem a seguir mais qual lógica?",
     options: [
-      { text: "buscar algo que tivesse mais significado ou propósito", profile: "Visionário" },
-      { text: "construir algo consistente e bem planejado", profile: "Estrategista" },
-      { text: "aproveitar oportunidades e experiências que apareceram", profile: "Explorador" },
-      { text: "manter estabilidade e segurança ao longo do tempo", profile: "Protetor" },
+      { text: "Buscar algo que tivesse mais significado ou propósito", profile: "Visionário" },
+      { text: "Construir algo consistente e bem planejado", profile: "Estrategista" },
+      { text: "Aproveitar oportunidades e experiências que apareceram", profile: "Explorador" },
+      { text: "Manter estabilidade e segurança ao longo do tempo", profile: "Protetor" },
     ]
   },
   {
@@ -66,20 +66,20 @@ export const QUIZ_QUESTIONS: Question[] = [
     id: 5,
     text: "Imagine que aparece uma nova oportunidade na sua vida. O que você analisa primeiro?",
     options: [
-      { text: "se aquilo está alinhado com a direção que você quer construir", profile: "Visionário" },
-      { text: "se existe um caminho claro e estruturado para aquilo funcionar", profile: "Estrategista" },
-      { text: "se aquilo pode comprometer sua segurança ou estabilidade atual", profile: "Protetor" },
-      { text: "se aquilo pode abrir novas experiências ou caminhos interessantes", profile: "Explorador" },
+      { text: "Se aquilo está alinhado com a direção que você quer construir", profile: "Visionário" },
+      { text: "Se existe um caminho claro e estruturado para aquilo funcionar", profile: "Estrategista" },
+      { text: "Se aquilo pode comprometer sua segurança ou estabilidade atual", profile: "Protetor" },
+      { text: "Se aquilo pode abrir novas experiências ou caminhos interessantes", profile: "Explorador" },
     ]
   },
   {
     id: 6,
     text: "Você encontra uma caixa misteriosa na sua porta com um bilhete dizendo: “isso pode mudar sua vida”. O que você faz primeiro?",
     options: [
-      { text: "analiso a caixa com cuidado para entender exatamente o que tem ali", profile: "Estrategista" },
-      { text: "desconfio e tento descobrir se aquilo pode dar algum problema", profile: "Protetor" },
-      { text: "abro na hora só para ver o que tem dentro", profile: "Explorador" },
-      { text: "fico curioso sobre por que aquilo apareceu para mim", profile: "Visionário" },
+      { text: "Analiso a caixa com cuidado para entender exatamente o que tem ali", profile: "Estrategista" },
+      { text: "Desconfio e tento descobrir se aquilo pode dar algum problema", profile: "Protetor" },
+      { text: "Abro na hora só para ver o que tem dentro", profile: "Explorador" },
+      { text: "Fico curioso sobre por que aquilo apareceu para mim", profile: "Visionário" },
     ]
   },
   {
@@ -96,20 +96,20 @@ export const QUIZ_QUESTIONS: Question[] = [
     id: 8,
     text: "Qual dessas imagens mais chama sua atenção ou te prende por alguns segundos?",
     options: [
-      { text: "uma mesa cheia de anotações e um grande plano sendo desenhado", profile: "Estrategista" },
-      { text: "uma casa iluminada resistindo firme no meio de uma grande tempestade", profile: "Protetor" },
-      { text: "uma estrada que se divide em vários caminhos diferentes", profile: "Explorador" },
-      { text: "uma pessoa parada no topo de uma montanha olhando o horizonte", profile: "Visionário" },
+      { text: "Uma mesa cheia de anotações e um grande plano sendo desenhado", profile: "Estrategista" },
+      { text: "Uma casa iluminada resistindo firme no meio de uma grande tempestade", profile: "Protetor" },
+      { text: "Uma estrada que se divide em vários caminhos diferentes", profile: "Explorador" },
+      { text: "Uma pessoa parada no topo de uma montanha olhando o horizonte", profile: "Visionário" },
     ]
   },
   {
     id: 9,
     text: "Você descobre um mapa antigo com quatro caminhos possíveis. Qual deles te chama mais atenção?",
     options: [
-      { text: "o caminho marcado com a frase: “aqui tudo começa a fazer sentido”", profile: "Visionário" },
-      { text: "o caminho descrito como: “o lugar onde poucos se perdem”", profile: "Protetor" },
-      { text: "o caminho anotado com: “ninguém sabe exatamente o que existe no final”", profile: "Explorador" },
-      { text: "o caminho que aponta para algo descrito como: “vale a pena chegar”", profile: "Estrategista" },
+      { text: "O caminho marcado com a frase: “aqui tudo começa a fazer sentido”", profile: "Visionário" },
+      { text: "O caminho descrito como: “o lugar onde poucos se perdem”", profile: "Protetor" },
+      { text: "O caminho anotado com: “ninguém sabe exatamente o que existe no final”", profile: "Explorador" },
+      { text: "O caminho que aponta para algo descrito como: “vale a pena chegar”", profile: "Estrategista" },
     ]
   }
 ];
@@ -127,7 +127,7 @@ export const PROFILES: Record<ProfileType, ProfileInfo> = {
   Protetor: {
     title: "Protetor",
     description: "Sua prioridade é a preservação do que é valioso, desenvolvendo uma habilidade profunda de sustentar.",
-    benefits: "O Protetor desenvolve uma habilidade profunda de sustentar. Você pensa nas consequências, se antecipa riscos. Você protege o que importa, da estrutura a vida, as pessoas. Pessoas com esse operador forte costumam ser resilientes, responsáveis e extremamente capazes de atravessar momentos difíceis e se manter firme, mesmo com o caos instalado. São aquelas pessoas que, quando a vida aperta, continuam de pé.",
+    benefits: "O Protetor desenvolve uma habilidade profunda de sustentar. Você pensa nas consequências, se antecipa riscos. Você protege o que importa, da estrutura a vida, as pessoas. Pessoas com esse operador forte costumam ser resilientes, responsáveis e extremamente capazes de atravar momentos difíceis e se manter firme, mesmo com o caos instalado. São aquelas pessoas que, quando a vida aperta, continuam de pé.",
     challenges: "Mas quando o Protetor assume o comando absoluto, as decisões começam a ser guiadas principalmente por segurança. Você passa a pensar primeiro no que pode dar errado, quase não consegue ouvir a voz \"e se der certo?\". Isso cria estabilidade, mas te tira o ímpeto, te tira do fluxo da vida que é não opera sobre a certeza e também pode criar uma vida mais estreita do que poderia ser.",
     regulated: "Quando o Centro Decisor se reorganiza, o Protetor não desaparece. Ele se torna um aliado, te dá estrutura, te faz seguir passos firmes, a responsabilidade continua existindo. Mas agora a segurança não define o limite da sua vida, mesmo que em passos seguros, caminhando cada vez mais em direção ao domínio da sua própria vida.",
     thought: "“Qual é a decisão mais segura?”",
