@@ -1,3 +1,4 @@
+
 export type ProfileType = 'Explorador' | 'Protetor' | 'Visionário' | 'Estrategista';
 
 export interface Answer {
@@ -127,8 +128,8 @@ export const PROFILES: Record<ProfileType, ProfileInfo> = {
   Protetor: {
     title: "Protetor",
     description: "Sua prioridade é a preservação do que é valioso, desenvolvendo uma habilidade profunda de sustentar.",
-    benefits: "O Protetor desenvolve uma habilidade profunda de sustentar. Você pensa nas consequências, se antecipa riscos. Você protege o que importa, da estrutura a vida, as pessoas. Pessoas com esse operador forte costumam ser resilientes, responsáveis e extremamente capazes de atravar momentos difíceis e se manter firme, mesmo com o caos instalado. São aquelas pessoas que, quando a vida aperta, continuam de pé.",
-    challenges: "Mas quando o Protetor assume o comando absoluto, as decisões começam a ser guiadas principalmente por segurança. Você passa a pensar primeiro no que pode dar errado, quase não consegue ouvir a voz \"e se der certo?\". Isso cria estabilidade, mas te tira o ímpeto, te tira do fluxo da vida que é não opera sobre a certeza e também pode criar uma vida mais estreita do que poderia ser.",
+    benefits: "O Protetor desenvolve uma habilidade profunda de sustentar. Você pensa nas consequências, se antecipa riscos. Você protege o que importa, da estrutura a vida, as pessoas. Pessoas com esse operador forte costumam ser resilientes, responsáveis e extremamente capazes de atravessar momentos difíceis e se manter firme, mesmo com o caos instalado. São aquelas pessoas que, quando a vida aperta, continuam de pé.",
+    challenges: "Mas quando o Protetor assume o comando absoluto, as decisões começam a ser guiadas principalmente por segurança. Você passa a pensar primeiro no que pode dar errado, quase não consegue ouvir a voz \"e se der certo?\". Isso cria estabilidade, mas te tira o ímpeto, mas te tira do fluxo da vida que é não opera sobre a certeza e também pode criar uma vida mais estreita do que poderia ser. Não porque você não tenha capacidade, mas porque você só consegue ouvir a proteção e criou barreiras para as possibilidades.",
     regulated: "Quando o Centro Decisor se reorganiza, o Protetor não desaparece. Ele se torna um aliado, te dá estrutura, te faz seguir passos firmes, a responsabilidade continua existindo. Mas agora a segurança não define o limite da sua vida, mesmo que em passos seguros, caminhando cada vez mais em direção ao domínio da sua própria vida.",
     thought: "“Qual é a decisão mais segura?”",
     icon: "Shield"
@@ -146,7 +147,7 @@ export const PROFILES: Record<ProfileType, ProfileInfo> = {
     title: "Estrategista",
     description: "Você observa antes de agir, organizando caminhos consistentes com lógica e precisão.",
     benefits: "O Estrategista observa antes de agir. Ele organiza, estrutura, analisa cenários e constrói caminhos consistentes. Pessoas com esse operador forte costumam ser vistas como confiáveis, inteligentes e capazes de manter a vida funcionando mesmo quando tudo parece caótico. São pessoas que sabem pensar no longo prazo. Sabem planejar. Sabem construir.",
-    challenges: "O problema começa quando a estrutura passa a mandar mais que a escolha. Você se torna muito bom em manter o que já está funcionando. Mas pode começar a evitar movimentos que desorganizam a estrutura. A vida fica lógica. Mas às vezes deixa de ser verdadeiramente escolhida.",
+    challenges: "O problema começa quando a estrutura passa a mandar mais que a escolha. Você se torna muito bom em manter o que já está funcionando. Mas pode começar a evitar movimentos que desorganizam a estrutura. A vida fica lógica. Mas às vezes deixa de ser verdadeiramente escolhida. E surge aquela sensação estranha: “minha vida funciona… mas não sei se fui eu que escolhi tudo isso.” Esse é o momento em que o Estrategista deixa de ser força e vira limite.",
     regulated: "Quando o Centro Decisor está equilibrado, o Estrategista vira uma ferramenta poderosa. Você continua estruturando. Continua pensando estrategicamente. Mas agora suas decisões não vêm apenas da lógica. Elas vêm da direção que você decidiu construir. A estrutura passa a servir a sua vida — e não o contrário.",
     thought: "“Qual é o plano mais inteligente aqui?”",
     icon: "Target"

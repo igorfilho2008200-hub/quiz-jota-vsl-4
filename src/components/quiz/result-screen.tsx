@@ -101,13 +101,10 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
             </h3>
             
             <div className="space-y-4 text-lg font-body text-white/90 leading-relaxed">
-              <p>A maioria das pessoas acredita que toma decisões de forma totalmente consciente.</p>
-              <p>Mas na prática, grande parte das nossas escolhas acontece no automático.</p>
-              <p>São padrões invisíveis que acabam capturando o nosso centro decisor e influenciando o caminho que seguimos na vida.</p>
-              <p>Por isso muitas vezes sentimos que estamos sempre ocupados, sempre avançando… mas sem realmente nos aproximar da vida que imaginamos para nós.</p>
-              <p>Quando você entende como esses padrões funcionam, algo muda.</p>
-              <p>Você começa a perceber por que certas decisões te aproximam da vida que você quer… e outras acabam te afastando completamente.</p>
-              <p>No vídeo a seguir, o Jota explica três elementos que permitem sair da vida automática e assumir o domínio real das próprias decisões.</p>
+              <p>O seu resultado mostra apenas uma parte do que está influenciando suas decisões hoje.</p>
+              <p>Muitas das escolhas que fazemos acontecem no automático, através de padrões que nem sempre percebemos.</p>
+              <p>Quando você entende esses padrões, começa a enxergar com mais clareza por que certas decisões te aproximam da vida que você quer — e por que outras acabam te afastando.</p>
+              <p>Na próxima etapa, você poderá ver a análise completa do seu resultado e a explicação completa do Jota sobre o que realmente está por trás dessas decisões.</p>
             </div>
 
             <div className="pt-8 flex flex-col items-center gap-4">
@@ -119,7 +116,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
                 className="bg-primary hover:bg-[#5A3FFF] text-white rounded-full px-12 py-8 h-auto text-xl font-bold shadow-xl transition-all hover:scale-105 active:scale-95 group w-full sm:w-auto"
               >
                 <Link href="/video" className="flex items-center gap-3">
-                  Ver a análise completa
+                  Ver análise completa
                   <PlayCircle className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
