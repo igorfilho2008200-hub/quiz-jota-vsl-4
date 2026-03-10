@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowLeft, PlayCircle } from 'lucide-react';
+import { ArrowLeft, CirclePlay } from 'lucide-react';
 
 export default function VideoPage() {
   return (
@@ -41,7 +40,7 @@ export default function VideoPage() {
         {/* Video Placeholder */}
         <div className="aspect-video bg-white/5 backdrop-blur-sm border border-white/10 rounded-[2rem] flex flex-col items-center justify-center relative overflow-hidden shadow-2xl group cursor-pointer hover:border-primary/50 transition-all">
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
-          <PlayCircle className="w-20 h-20 text-primary group-hover:scale-110 transition-transform" />
+          <CirclePlay className="w-20 h-20 text-primary group-hover:scale-110 transition-transform" />
           <p className="mt-4 font-bold uppercase tracking-widest text-primary/80">O vídeo começará em breve</p>
         </div>
 

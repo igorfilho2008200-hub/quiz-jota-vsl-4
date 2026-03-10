@@ -1,10 +1,9 @@
-
 "use client"
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PROFILES, ProfileType } from '@/lib/quiz-data';
-import { Compass, Shield, Eye, Target, Share2, RotateCcw, Lightbulb, AlertTriangle, CheckCircle2, MessageSquare, PlayCircle } from 'lucide-react';
+import { Compass, Shield, Eye, Target, Share2, RotateCcw, Lightbulb, TriangleAlert, CircleCheck, MessageSquare, CirclePlay } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
@@ -71,7 +70,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
           {/* Challenges */}
           <div className="bg-white/60 backdrop-blur-sm border border-white/30 p-8 rounded-[2.5rem] shadow-sm space-y-4 border-l-4 border-l-destructive/30">
             <div className="flex items-center gap-3 text-destructive">
-              <AlertTriangle className="w-6 h-6" />
+              <TriangleAlert className="w-6 h-6" />
               <h3 className="text-xl font-bold uppercase tracking-wider font-headline">Quando o operador domina</h3>
             </div>
             <p className="text-lg leading-relaxed text-foreground/80 font-body">
@@ -82,7 +81,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
           {/* Regulated */}
           <div className="bg-white/60 backdrop-blur-sm border border-white/30 p-8 rounded-[2.5rem] shadow-sm space-y-4 border-l-4 border-l-primary/30">
             <div className="flex items-center gap-3 text-primary">
-              <CheckCircle2 className="w-6 h-6" />
+              <CircleCheck className="w-6 h-6" />
               <h3 className="text-xl font-bold uppercase tracking-wider font-headline">Quando o centro é regulado</h3>
             </div>
             <p className="text-lg leading-relaxed text-foreground/80 font-body">
@@ -117,7 +116,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
               >
                 <Link href="/video" className="flex items-center gap-3">
                   Ver análise completa
-                  <PlayCircle className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <CirclePlay className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                 </Link>
               </Button>
             </div>
