@@ -14,17 +14,13 @@ import {
   TriangleAlert, 
   CircleCheck, 
   MessageSquare, 
-  CirclePlay, 
-  Sparkles 
+  CirclePlay 
 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 import Link from 'next/link';
-import { AnalyzeResultsOutput } from '@/ai/flows/analyze-results-flow';
 
 interface ResultScreenProps {
   profile: ProfileType;
   onRestart: () => void;
-  aiAnalysis: AnalyzeResultsOutput | null;
 }
 
 const profileIcons: Record<ProfileType, any> = {
@@ -34,7 +30,7 @@ const profileIcons: Record<ProfileType, any> = {
   Estrategista: Target
 };
 
-export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenProps) {
+export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
   const info = PROFILES[profile];
   const Icon = profileIcons[profile];
 
@@ -48,26 +44,6 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
       </div>
 
       <div className="space-y-8">
-        {/* IA Analysis Card - Google AI Studio Integration */}
-        {aiAnalysis && (
-          <div className="bg-primary/5 border border-primary/20 p-8 md:p-10 rounded-[2.5rem] shadow-sm space-y-6 relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <Sparkles className="w-12 h-12" />
-            </div>
-            <div className="flex items-center gap-3 text-primary">
-              <Sparkles className="w-5 h-5" />
-              <h3 className="text-sm font-bold uppercase tracking-widest">Análise do Mentor (IA)</h3>
-            </div>
-            <div className="space-y-4 font-body text-lg leading-relaxed text-accent">
-              <p className="italic">"{aiAnalysis.personalizedAnalysis}"</p>
-              <div className="pt-4 border-t border-primary/10">
-                <p className="text-sm font-bold text-primary uppercase tracking-tighter mb-2">Desafio para Hoje:</p>
-                <p>{aiAnalysis.advice}</p>
-              </div>
-            </div>
-          </div>
-        )}
-
         {/* Main Card with Intro & Icon */}
         <div className="bg-white/70 backdrop-blur-md border border-white/40 p-10 md:p-14 rounded-[3rem] shadow-xl space-y-8 relative overflow-hidden group">
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700" />

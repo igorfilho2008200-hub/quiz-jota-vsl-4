@@ -6,7 +6,6 @@ import { QuestionCard } from './question-card';
 import { LoadingScreen } from './loading-screen';
 import { ResultScreen } from './result-screen';
 import { QUIZ_QUESTIONS, ProfileType, Answer } from '@/lib/quiz-data';
-import { analyzeResults, AnalyzeResultsOutput } from '@/ai/flows/analyze-results-flow';
 
 type QuizState = 'welcome' | 'questions' | 'loading' | 'results';
 
@@ -15,12 +14,10 @@ export function QuizManager() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [finalProfile, setFinalProfile] = useState<ProfileType | null>(null);
-  const [aiAnalysis, setAiAnalysis] = useState<AnalyzeResultsOutput | null>(null);
 
   const startQuiz = () => {
     setCurrentQuestionIndex(0);
     setAnswers([]);
-    setAiAnalysis(null);
     setState('questions');
   };
 
@@ -45,7 +42,7 @@ export function QuizManager() {
     }
   };
 
-  const calculateResult = async (allAnswers: Answer[]) => {
+  const calculateResult = (allAnswers: Answer[]) => {
     setState('loading');
 
     // Perfil dominante (5 primeiras perguntas)
@@ -83,23 +80,6 @@ export function QuizManager() {
 
     setFinalProfile(winner);
 
-    // Chamar análise de IA em paralelo
-    try {
-      const formattedAnswers = QUIZ_QUESTIONS.map((q, idx) => ({
-        questionText: q.text,
-        answerText: allAnswers[idx].text,
-      }));
-
-      const analysis = await analyzeResults({
-        profile: winner,
-        answers: formattedAnswers,
-      });
-      setAiAnalysis(analysis);
-    } catch (error) {
-      console.error("Erro na análise de IA:", error);
-      // Mantém nulo, a UI lidará com isso
-    }
-
     // Tempo mínimo para a animação de loading
     setTimeout(() => {
       setState('results');
@@ -111,7 +91,6 @@ export function QuizManager() {
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setFinalProfile(null);
-    setAiAnalysis(null);
   };
 
   return (
@@ -128,7 +107,7 @@ export function QuizManager() {
       )}
       {state === 'loading' && <LoadingScreen />}
       {state === 'results' && finalProfile && (
-        <ResultScreen profile={finalProfile} onRestart={restartQuiz} aiAnalysis={aiAnalysis} />
+        <ResultScreen profile={finalProfile} onRestart={restartQuiz} />
       )}
     </div>
   );
