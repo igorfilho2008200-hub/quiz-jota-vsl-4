@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from 'react';
@@ -80,7 +81,7 @@ export function QuizManager() {
 
     setFinalProfile(winner);
 
-    // Tempo mínimo para a animação de loading
+    // Tempo mínimo para a animação de loading e transição para resultados
     setTimeout(() => {
       setState('results');
     }, 3000);

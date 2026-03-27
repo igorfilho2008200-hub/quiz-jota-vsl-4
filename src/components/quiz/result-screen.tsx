@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from 'react';
@@ -98,7 +99,7 @@ export function ResultScreen({ profile, onRestart }: ResultScreenProps) {
           </div>
         </div>
 
-        {/* Transition to Video */}
+        {/* Transition Section */}
         <div className="bg-accent text-white p-10 md:p-14 rounded-[3rem] shadow-2xl space-y-8 mt-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
           
