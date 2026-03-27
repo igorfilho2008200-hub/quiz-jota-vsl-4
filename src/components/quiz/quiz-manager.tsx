@@ -6,6 +6,7 @@ import { QuestionCard } from './question-card';
 import { LoadingScreen } from './loading-screen';
 import { ResultScreen } from './result-screen';
 import { QUIZ_QUESTIONS, ProfileType, Answer } from '@/lib/quiz-data';
+import { analyzeResults, AnalyzeResultsOutput } from '@/ai/flows/analyze-results-flow';
 
 type QuizState = 'welcome' | 'questions' | 'loading' | 'results';
 
@@ -14,10 +15,12 @@ export function QuizManager() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answer[]>([]);
   const [finalProfile, setFinalProfile] = useState<ProfileType | null>(null);
+  const [aiAnalysis, setAiAnalysis] = useState<AnalyzeResultsOutput | null>(null);
 
   const startQuiz = () => {
     setCurrentQuestionIndex(0);
     setAnswers([]);
+    setAiAnalysis(null);
     setState('questions');
   };
 
@@ -42,10 +45,10 @@ export function QuizManager() {
     }
   };
 
-  const calculateResult = (allAnswers: Answer[]) => {
+  const calculateResult = async (allAnswers: Answer[]) => {
     setState('loading');
 
-    // Lógica de perfil baseada nas primeiras 5 perguntas
+    // Perfil dominante (5 primeiras perguntas)
     const firstFive = allAnswers.slice(0, 5);
     const scores: Record<ProfileType, number> = {
       Explorador: 0,
@@ -74,17 +77,33 @@ export function QuizManager() {
     if (candidates.length === 1) {
       winner = candidates[0];
     } else {
-      // Desempate: Usa o perfil da 5ª pergunta (índice 4)
       const tieBreakerProfile = allAnswers[4].profile;
       winner = candidates.includes(tieBreakerProfile) ? tieBreakerProfile : candidates[0];
     }
 
     setFinalProfile(winner);
 
-    // Simula tempo de processamento
+    // Chamar análise de IA em paralelo
+    try {
+      const formattedAnswers = QUIZ_QUESTIONS.map((q, idx) => ({
+        questionText: q.text,
+        answerText: allAnswers[idx].text,
+      }));
+
+      const analysis = await analyzeResults({
+        profile: winner,
+        answers: formattedAnswers,
+      });
+      setAiAnalysis(analysis);
+    } catch (error) {
+      console.error("Erro na análise de IA:", error);
+      // Mantém nulo, a UI lidará com isso
+    }
+
+    // Tempo mínimo para a animação de loading
     setTimeout(() => {
       setState('results');
-    }, 2500);
+    }, 3000);
   };
 
   const restartQuiz = () => {
@@ -92,6 +111,7 @@ export function QuizManager() {
     setCurrentQuestionIndex(0);
     setAnswers([]);
     setFinalProfile(null);
+    setAiAnalysis(null);
   };
 
   return (
@@ -108,7 +128,7 @@ export function QuizManager() {
       )}
       {state === 'loading' && <LoadingScreen />}
       {state === 'results' && finalProfile && (
-        <ResultScreen profile={finalProfile} onRestart={restartQuiz} />
+        <ResultScreen profile={finalProfile} onRestart={restartQuiz} aiAnalysis={aiAnalysis} />
       )}
     </div>
   );
