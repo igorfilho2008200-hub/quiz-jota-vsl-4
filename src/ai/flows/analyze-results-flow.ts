@@ -47,8 +47,9 @@ Evite linguagem corporativa ou motivacional genérica. Seja visceral e autêntic
 });
 
 export async function analyzeResults(input: AnalyzeResultsInput): Promise<AnalyzeResultsOutput> {
-  const result = await analyzeResultsFlow(input);
-  return result;
+  const { output } = await analyzeResultsFlow(input);
+  if (!output) throw new Error('Falha na geração da análise de IA via Google AI Studio');
+  return output;
 }
 
 const analyzeResultsFlow = ai.defineFlow(
@@ -58,8 +59,7 @@ const analyzeResultsFlow = ai.defineFlow(
     outputSchema: AnalyzeResultsOutputSchema,
   },
   async (input) => {
-    const { output } = await analyzeResultsPrompt(input);
-    if (!output) throw new Error('Falha na geração da análise de IA');
-    return output;
+    const result = await analyzeResultsPrompt(input);
+    return result;
   }
 );
