@@ -3,7 +3,20 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { PROFILES, ProfileType } from '@/lib/quiz-data';
-import { Compass, Shield, Eye, Target, Share2, RotateCcw, Lightbulb, TriangleAlert, CircleCheck, MessageSquare, CirclePlay, Sparkles } from 'lucide-react';
+import { 
+  Compass, 
+  Shield, 
+  Eye, 
+  Target, 
+  Share2, 
+  RotateCcw, 
+  Lightbulb, 
+  TriangleAlert, 
+  CircleCheck, 
+  MessageSquare, 
+  CirclePlay, 
+  Sparkles 
+} from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { AnalyzeResultsOutput } from '@/ai/flows/analyze-results-flow';
@@ -35,7 +48,7 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
       </div>
 
       <div className="space-y-8">
-        {/* IA Analysis Card (Conditional) */}
+        {/* IA Analysis Card - Google AI Studio Integration */}
         {aiAnalysis && (
           <div className="bg-primary/5 border border-primary/20 p-8 md:p-10 rounded-[2.5rem] shadow-sm space-y-6 relative overflow-hidden">
             <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -43,12 +56,12 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
             </div>
             <div className="flex items-center gap-3 text-primary">
               <Sparkles className="w-5 h-5" />
-              <h3 className="text-sm font-bold uppercase tracking-widest">Análise Personalizada por IA</h3>
+              <h3 className="text-sm font-bold uppercase tracking-widest">Análise do Mentor (IA)</h3>
             </div>
             <div className="space-y-4 font-body text-lg leading-relaxed text-accent">
               <p className="italic">"{aiAnalysis.personalizedAnalysis}"</p>
               <div className="pt-4 border-t border-primary/10">
-                <p className="text-sm font-bold text-primary uppercase tracking-tighter mb-2">Um caminho para hoje:</p>
+                <p className="text-sm font-bold text-primary uppercase tracking-tighter mb-2">Desafio para Hoje:</p>
                 <p>{aiAnalysis.advice}</p>
               </div>
             </div>
@@ -76,7 +89,7 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
           </div>
         </div>
 
-        {/* Detailed Sections Grid */}
+        {/* Detailed Sections */}
         <div className="grid gap-6">
           <div className="bg-white/60 backdrop-blur-sm border border-white/30 p-8 rounded-[2.5rem] shadow-sm space-y-4">
             <div className="flex items-center gap-3 text-primary">
@@ -91,7 +104,7 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
           <div className="bg-white/60 backdrop-blur-sm border border-white/30 p-8 rounded-[2.5rem] shadow-sm space-y-4 border-l-4 border-l-destructive/30">
             <div className="flex items-center gap-3 text-destructive">
               <TriangleAlert className="w-6 h-6" />
-              <h3 className="text-xl font-bold uppercase tracking-wider font-headline">Quando o operador domina</h3>
+              <h3 className="text-xl font-bold uppercase tracking-wider font-headline">Quando domina o centro</h3>
             </div>
             <p className="text-lg leading-relaxed text-foreground/80 font-body">
               {info.challenges}
@@ -101,7 +114,7 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
           <div className="bg-white/60 backdrop-blur-sm border border-white/30 p-8 rounded-[2.5rem] shadow-sm space-y-4 border-l-4 border-l-primary/30">
             <div className="flex items-center gap-3 text-primary">
               <CircleCheck className="w-6 h-6" />
-              <h3 className="text-xl font-bold uppercase tracking-wider font-headline">Quando o centro é regulado</h3>
+              <h3 className="text-xl font-bold uppercase tracking-wider font-headline">O centro regulado</h3>
             </div>
             <p className="text-lg leading-relaxed text-foreground/80 font-body">
               {info.regulated}
@@ -109,7 +122,7 @@ export function ResultScreen({ profile, onRestart, aiAnalysis }: ResultScreenPro
           </div>
         </div>
 
-        {/* Transition Section */}
+        {/* Transition to Video */}
         <div className="bg-accent text-white p-10 md:p-14 rounded-[3rem] shadow-2xl space-y-8 mt-12 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32" />
           

@@ -1,29 +1,21 @@
-# Centro Decisor - Quiz de Autoconhecimento
+# Centro Decisor - Migração Google AI Studio
 
-Este é um projeto Next.js focado em autoconhecimento, utilizando Genkit para futuras integrações de IA e Firebase para infraestrutura.
+Este projeto foi migrado para utilizar o poder do **Gemini** via **Google AI Studio** para fornecer análises de autoconhecimento personalizadas.
 
-## Integração com Google AI Studio
+## 🚀 Como Ativar a IA
 
-O projeto já está configurado para usar o **Genkit** com os modelos Gemini. Para habilitar as funcionalidades de IA (se desejar expandir o quiz com análises personalizadas por IA):
+Para que o quiz deixe de ser apenas estático e passe a fornecer insights inteligentes:
 
-1. Vá até o [Google AI Studio](https://aistudio.google.com/).
-2. Crie uma nova API Key.
-3. No seu ambiente de desenvolvimento ou no seu arquivo `.env.local` (não versionado), adicione a seguinte variável:
+1.  **Obtenha sua Chave**: Vá ao [Google AI Studio](https://aistudio.google.com/) e crie uma **API KEY**.
+2.  **Configure o Ambiente**: No seu ambiente de desenvolvimento ou no arquivo `.env`, adicione a chave:
+    ```env
+    GOOGLE_GENAI_API_KEY=SUA_CHAVE_AQUI
+    ```
+3.  **Resultado**: O sistema detectará a chave automaticamente e exibirá o card "Análise do Mentor (IA)" na tela final do quiz.
 
-```env
-GOOGLE_GENAI_API_KEY=sua_chave_aqui
-```
+## 🧠 Tecnologia GenAI
 
-O arquivo `src/ai/genkit.ts` já está configurado para utilizar este plugin por padrão.
-
-## Tecnologias Utilizadas
-
-- **Framework**: Next.js 15 (App Router)
-- **Estilização**: Tailwind CSS & Shadcn UI
-- **IA/GenAI**: Genkit (Google AI Plugin)
-- **Ícones**: Lucide React
-- **Animações**: CSS Transitions & Animate.css
+O projeto utiliza o **Genkit** com o plugin `@genkit-ai/google-genai`. O fluxo de IA está localizado em `src/ai/flows/analyze-results-flow.ts` e utiliza o modelo `gemini-2.5-flash` para garantir respostas rápidas e profundas.
 
 ---
-
 Desenvolvido para a Jornada da Consciência.

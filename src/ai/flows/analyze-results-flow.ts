@@ -1,11 +1,11 @@
 'use server';
 /**
  * @fileOverview Fluxo de IA para análise personalizada do Centro Decisor.
+ * Integração direta com Google AI Studio utilizando Gemini.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'genkit';
-import { ProfileType, Answer } from '@/lib/quiz-data';
 
 const AnalyzeResultsInputSchema = z.object({
   profile: z.string().describe('O perfil dominante identificado no quiz.'),
@@ -30,20 +30,20 @@ const analyzeResultsPrompt = ai.definePrompt({
   output: { schema: AnalyzeResultsOutputSchema },
   prompt: `Você é um mentor especialista em autoconhecimento e psicologia cognitiva, com foco em tomada de decisão.
 
-O usuário realizou um quiz chamado "Centro Decisor" e foi identificado com o perfil dominante: {{profile}}.
+O usuário realizou o quiz "Centro Decisor" e foi identificado como: {{profile}}.
 
-Aqui estão as respostas específicas que ele deu para entender o contexto:
+Aqui estão as respostas específicas para análise de contexto:
 {{#each answers}}
 Pergunta: {{questionText}}
 Resposta: {{answerText}}
 ---
 {{/each}}
 
-Sua tarefa é gerar uma análise personalizada de dois parágrafos:
-1. "personalizedAnalysis": Explique como as escolhas específicas dele reforçam o perfil {{profile}}, mas aponte nuances interessantes baseadas nas respostas (ex: se ele é Explorador mas escolheu algo seguro em uma pergunta, comente sobre esse equilíbrio).
-2. "advice": Dê um conselho curto, poético e prático para ele começar a "regular" esse centro decisor hoje mesmo.
+Sua tarefa é gerar uma análise de "Mentor" em dois campos:
+1. "personalizedAnalysis": Um parágrafo profundo que conecte as respostas dele ao perfil {{profile}}. Mostre como as escolhas dele revelam um padrão (ex: se ele busca segurança mas é curioso, como essas forças se chocam ou se ajudam). Use um tom acolhedor e poético.
+2. "advice": Um conselho direto de uma frase para o dia de hoje, focado em trazer mais consciência para a próxima decisão dele.
 
-Use um tom acolhedor, profundo (estilo "Jornada da Consciência") e evite clichês corporativos.`,
+Evite linguagem corporativa ou motivacional genérica. Seja visceral e autêntico.`,
 });
 
 export async function analyzeResults(input: AnalyzeResultsInput): Promise<AnalyzeResultsOutput> {
@@ -59,7 +59,7 @@ const analyzeResultsFlow = ai.defineFlow(
   },
   async (input) => {
     const { output } = await analyzeResultsPrompt(input);
-    if (!output) throw new Error('Falha ao gerar análise de IA');
+    if (!output) throw new Error('Falha na geração da análise de IA');
     return output;
   }
 );
