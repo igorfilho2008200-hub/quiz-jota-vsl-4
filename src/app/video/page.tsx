@@ -5,11 +5,11 @@ import { ArrowLeft, CirclePlay } from 'lucide-react';
 
 export default function VideoPage() {
   return (
-    <main className="min-h-screen relative overflow-hidden flex flex-col bg-background text-foreground p-6 md:p-12">
-      {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 rounded-full blur-[100px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/20 rounded-full blur-[100px]" />
+    <main className="min-h-screen relative overflow-hidden flex flex-col bg-white text-foreground p-6 md:p-12">
+      {/* Decorative background elements - very subtle on white */}
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[100px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 rounded-full blur-[100px]" />
       </div>
 
       <header className="max-w-4xl mx-auto w-full z-10 flex items-center justify-between mb-12">
@@ -28,13 +28,18 @@ export default function VideoPage() {
       </header>
 
       <section className="flex-1 max-w-4xl mx-auto w-full z-10 space-y-12 flex flex-col justify-center py-10">
-        <div className="space-y-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-headline font-bold leading-tight text-accent max-w-4xl mx-auto">
-            12 minutos que vão mudar o jeito que você enxerga sua própria vida — e explicar por que suas decisões fazem você não estar onde sabe que poderia.
+        <div className="space-y-6 text-center">
+          <h1 className="text-4xl md:text-6xl font-headline font-bold leading-tight text-accent max-w-4xl mx-auto">
+            12 minutos que vão mudar o jeito que você enxerga sua própria vida
           </h1>
-          <p className="text-lg md:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed">
-            3 elementos que separam <span className="text-accent font-bold">"Os automáticos"</span> (pessoas que apenas sobrevivem reagindo à vida) dos <span className="text-primary font-bold">"Decisores"</span> (pessoas que constroem uma vida com direção, liberdade e prosperidade).
-          </p>
+          <h2 className="text-xl md:text-3xl text-primary font-medium font-body max-w-3xl mx-auto leading-relaxed">
+            e explicar por que suas decisões fazem você não estar onde sabe que poderia.
+          </h2>
+          <div className="pt-4 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground font-body leading-relaxed">
+              3 elementos que separam <span className="text-accent font-bold">"Os automáticos"</span> (pessoas que apenas sobrevivem reagindo à vida) dos <span className="text-primary font-bold">"Decisores"</span> (pessoas que constroem uma vida com direção, liberdade e prosperidade).
+            </p>
+          </div>
         </div>
 
         {/* Video Placeholder */}
