@@ -28,8 +28,8 @@ export default function RootLayout({
       <body className="font-body antialiased bg-background text-foreground">
 =======
       <head>
-        {/* Script do Pixel (Exemplo: Facebook Pixel) */}
-        <Script id="tracking-pixel" strategy="afterInteractive">
+        {/* Meta Pixel Code */}
+        <Script id="fb-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -39,20 +39,32 @@ export default function RootLayout({
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', 'SEU_PIXEL_ID_AQUI');
+            fbq('init', '1472262147878243');
             fbq('track', 'PageView');
+          `}
+        </Script>
+        
+        {/* UTMify Pixel Code */}
+        <Script id="utmify-pixel" strategy="afterInteractive">
+          {`
+            window.pixelId = "69c5b054f3e2529d241a7e74";
+            var a = document.createElement("script");
+            a.setAttribute("async", "");
+            a.setAttribute("defer", "");
+            a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+            document.head.appendChild(a);
           `}
         </Script>
       </head>
       <body className="font-body antialiased bg-background text-foreground">
-        {/* Noscript para navegadores sem JS */}
+        {/* Noscript Meta Pixel */}
         <noscript>
           <img 
             height="1" 
             width="1" 
             style={{ display: 'none' }} 
             alt="" 
-            src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1" 
+            src="https://www.facebook.com/tr?id=1472262147878243&ev=PageView&noscript=1" 
           />
         </noscript>
 >>>>>>> 742d197 (vc pode instalar um pixel nessa pagina para mim?)
