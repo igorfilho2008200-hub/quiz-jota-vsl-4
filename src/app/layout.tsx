@@ -1,9 +1,6 @@
 import type {Metadata} from 'next';
 import { Alegreya } from 'next/font/google';
-<<<<<<< HEAD
-=======
 import Script from 'next/script';
->>>>>>> 742d197 (vc pode instalar um pixel nessa pagina para mim?)
 import './globals.css';
 
 const alegreya = Alegreya({
@@ -24,9 +21,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={alegreya.variable}>
-<<<<<<< HEAD
-      <body className="font-body antialiased bg-background text-foreground">
-=======
       <head>
         {/* Meta Pixel Code */}
         <Script id="fb-pixel" strategy="afterInteractive">
@@ -67,7 +61,6 @@ export default function RootLayout({
             src="https://www.facebook.com/tr?id=1472262147878243&ev=PageView&noscript=1" 
           />
         </noscript>
->>>>>>> 742d197 (vc pode instalar um pixel nessa pagina para mim?)
         {children}
       </body>
     </html>

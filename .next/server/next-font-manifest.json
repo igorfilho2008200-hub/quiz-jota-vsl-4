@@ -1,6 +1,13 @@
 {
-  "app": {},
-  "appUsingSizeAdjust": false,
+  "app": {
+    "[project]/src/app/page": [
+      "static/media/3e185f0c9c3d9cda-s.p.5799f585.woff2"
+    ],
+    "[project]/src/app/video/page": [
+      "static/media/3e185f0c9c3d9cda-s.p.5799f585.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
   "pages": {},
   "pagesUsingSizeAdjust": false
 }
