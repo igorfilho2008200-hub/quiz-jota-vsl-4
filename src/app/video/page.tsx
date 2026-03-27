@@ -22,18 +22,18 @@ export default function VideoPage() {
         </Link>
         <div className="flex items-center gap-2 opacity-60">
           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-          <span className="text-xs uppercase tracking-[0.4em] font-medium text-accent">Análise Completa</span>
+          <span className="text-xs uppercase tracking-[0.4em] font-medium text-accent">Análise Profunda</span>
           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
         </div>
       </header>
 
-      <section className="flex-1 max-w-4xl mx-auto w-full z-10 space-y-10 flex flex-col justify-center">
-        <div className="space-y-6 text-center">
-          <h1 className="text-3xl md:text-5xl font-headline font-bold leading-tight text-accent">
-            Assista com atenção à explicação completa do Jota sobre o seu resultado
+      <section className="flex-1 max-w-4xl mx-auto w-full z-10 space-y-12 flex flex-col justify-center py-10">
+        <div className="space-y-8 text-center">
+          <h1 className="text-3xl md:text-5xl font-headline font-bold leading-tight text-accent max-w-4xl mx-auto">
+            12 minutos que vão mudar o jeito que você enxerga sua própria vida — e explicar por que suas decisões fazem você não estar onde sabe que poderia.
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground font-body max-w-3xl mx-auto leading-relaxed">
-            Neste vídeo, o Jota explica o que realmente está por trás dos padrões de decisão que influenciam a sua vida hoje — e por que entender isso muda completamente a forma como você enxerga suas escolhas.
+          <p className="text-lg md:text-2xl text-muted-foreground font-body max-w-4xl mx-auto leading-relaxed">
+            3 elementos que separam <span className="text-accent font-bold">"Os automáticos"</span> (pessoas que apenas sobrevivem reagindo à vida) dos <span className="text-primary font-bold">"Decisores"</span> (pessoas que constroem uma vida com direção, liberdade e prosperidade).
           </p>
         </div>
 
@@ -48,15 +48,15 @@ export default function VideoPage() {
           </div>
           
           <p className="text-center text-sm text-muted-foreground font-body italic">
-            Recomendamos assistir até o final para entender completamente a análise do seu perfil.
+            Recomendamos assistir até o final para entender completamente a transição para o seu novo centro decisor.
           </p>
         </div>
 
-        <div className="text-center pt-8">
+        <div className="text-center pt-4">
           <Button 
             className="bg-[#6B4EFF] hover:bg-[#5A3FFF] text-white px-12 py-8 rounded-full text-xl font-bold shadow-xl shadow-primary/20 transition-all hover:scale-105 active:scale-95"
           >
-            Começar Jornada
+            Quero Me Tornar Um Decisor
           </Button>
         </div>
       </section>
