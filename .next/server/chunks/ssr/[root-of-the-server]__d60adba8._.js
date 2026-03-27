@@ -66,7 +66,7 @@ function RootLayout({ children }) {
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1472262147878243');
+            fbq('init', '1906210206766748');
             fbq('track', 'PageView');
           `
                     }, void 0, false, {
@@ -78,7 +78,7 @@ function RootLayout({ children }) {
                         id: "utmify-pixel",
                         strategy: "afterInteractive",
                         children: `
-            window.pixelId = "69c5b054f3e2529d241a7e74";
+            window.pixelId = "69c589ea5e0fee33a350f58b";
             var a = document.createElement("script");
             a.setAttribute("async", "");
             a.setAttribute("defer", "");
@@ -107,7 +107,7 @@ function RootLayout({ children }) {
                                 display: 'none'
                             },
                             alt: "",
-                            src: "https://www.facebook.com/tr?id=1472262147878243&ev=PageView&noscript=1"
+                            src: "https://www.facebook.com/tr?id=1906210206766748&ev=PageView&noscript=1"
                         }, void 0, false, {
                             fileName: "[project]/src/app/layout.tsx",
                             lineNumber: 56,
